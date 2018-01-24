@@ -14,6 +14,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPageModule } from '../pages/login/login.module';
 import { OAuthModule } from 'angular-oauth2-oidc';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -25,6 +27,7 @@ import { OAuthModule } from 'angular-oauth2-oidc';
   imports: [
     BrowserModule,
     LoginPageModule,
+    HttpClientModule,
     OAuthModule.forRoot(),
     IonicModule.forRoot(MyApp)
   ],
