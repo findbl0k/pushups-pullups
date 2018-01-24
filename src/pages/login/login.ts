@@ -1,25 +1,34 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController } from 'ionic-angular';
+import { JwksValidationHandler, OAuthService } from 'angular-oauth2-oidc';
 
 @IonicPage()
 @Component({
   selector: 'page-login',
-  templateUrl: 'login.html',
+  templateUrl: 'login.html'
 })
 export class LoginPage {
+  @ViewChild('email') email: any;
+  private username: string;
+  private password: string;
+  private error: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private navCtrl: NavController, private oauthService: OAuthService) {
+    oauthService.redirectUri = window.location.origin;
+    oauthService.clientId = '0oadr61qwkatfV9aL0h7';
+    oauthService.scope = 'openid profile email';
+    oauthService.issuer = 'https://dev-690565.oktapreview.com/oauth2/default';
+    oauthService.tokenValidationHandler = new JwksValidationHandler();
+
+    // Load Discovery Document and then try to login the user
+    this.oauthService.loadDiscoveryDocument().then(() => {
+      this.oauthService.tryLogin();
+    });
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+  ionViewDidLoad(): void {
+    setTimeout(() => {
+      this.email.setFocus();
+    }, 500);
   }
-
 }
