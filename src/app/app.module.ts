@@ -11,11 +11,6 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { LoginPageModule } from '../pages/login/login.module';
-import { OAuthModule } from 'angular-oauth2-oidc';
-
-import { HttpClientModule } from '@angular/common/http';
-
 @NgModule({
   declarations: [
     MyApp,
@@ -26,9 +21,6 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    LoginPageModule,
-    HttpClientModule,
-    OAuthModule.forRoot(),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
