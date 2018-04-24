@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6e9fbc2e-7e17-48ff-8c3f-3a07fe6160df" name="Default" comment="" />
+    <list default="true" id="6e9fbc2e-7e17-48ff-8c3f-3a07fe6160df" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/dataService.ts" afterPath="$PROJECT_DIR$/src/services/dataService.ts" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -42,8 +44,8 @@
       <file leaf-file-name="dataService.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/services/dataService.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+            <state relative-caret-position="693">
+              <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -231,12 +233,12 @@
       <workItem from="1521574842165" duration="10000" />
       <workItem from="1524518678080" duration="1346000" />
       <workItem from="1524520330044" duration="1705000" />
-      <workItem from="1524586871032" duration="3269000" />
+      <workItem from="1524586871032" duration="3401000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6330000" />
+    <option name="totallyTimeSpent" value="6462000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3866" height="2106" extended-state="6" />
@@ -582,8 +584,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/services/dataService.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        <state relative-caret-position="693">
+          <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>

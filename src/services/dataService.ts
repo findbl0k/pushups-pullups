@@ -18,11 +18,11 @@ export class DataService {
     this.userWorkouts = this.getStorageVariable('user_workouts');
   }
 
-  static getStorageVariable(name) {
+  private getStorageVariable(name) {
     return JSON.parse(window.localStorage.getItem(name));
   }
 
-  static setStorageVariable(name, data) {
+  private setStorageVariable(name, data) {
     window.localStorage.setItem(name, JSON.stringify(data));
   }
 
