@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6e9fbc2e-7e17-48ff-8c3f-3a07fe6160df" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/charts/charts.ts" afterPath="$PROJECT_DIR$/src/pages/charts/charts.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/entry/entry.html" afterPath="$PROJECT_DIR$/src/pages/entry/entry.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/entry/entry.ts" afterPath="$PROJECT_DIR$/src/pages/entry/entry.ts" />
-    </list>
+    <list default="true" id="6e9fbc2e-7e17-48ff-8c3f-3a07fe6160df" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -20,13 +15,37 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="entry.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="entry.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/entry/entry.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
               <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../tap_app/src/services/auth.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dataService.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/services/dataService.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,6 +96,7 @@
         <option value="$PROJECT_DIR$/src/pages/charts/charts.ts" />
         <option value="$PROJECT_DIR$/src/pages/entry/entry.html" />
         <option value="$PROJECT_DIR$/src/pages/entry/entry.ts" />
+        <option value="$PROJECT_DIR$/src/services/dataService.ts" />
       </list>
     </option>
   </component>
@@ -92,8 +112,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-265" />
-    <option name="y" value="23" />
+    <option name="x" value="-13" />
+    <option name="y" value="-13" />
     <option name="width" value="3866" />
     <option name="height" value="2106" />
   </component>
@@ -211,15 +231,15 @@
       <workItem from="1521574842165" duration="10000" />
       <workItem from="1524518678080" duration="1346000" />
       <workItem from="1524520330044" duration="1705000" />
-      <workItem from="1524586871032" duration="1308000" />
+      <workItem from="1524586871032" duration="3269000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4369000" />
+    <option name="totallyTimeSpent" value="6330000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-265" y="23" width="3866" height="2106" extended-state="0" />
+    <frame x="-13" y="-13" width="3866" height="2106" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -546,6 +566,26 @@
           <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../tap_app/src/services/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/dataService.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
