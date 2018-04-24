@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http} from "@angular/http";
+import { Http } from "@angular/http";
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 
 import 'rxjs/add/operator/finally';
@@ -13,9 +13,9 @@ export class DataService {
   public dataService = new BehaviorSubject(null);
 
   constructor(public http: Http) {
-
     this.userInfo = this.getStorageVariable('user_info');
     this.userWorkouts = this.getStorageVariable('user_workouts');
+    this.dataService.next(this.userWorkouts); //set the observable from stored data
   }
 
   private getStorageVariable(name) {
@@ -34,10 +34,9 @@ export class DataService {
     this.setStorageVariable('user_workouts', payload);
   }
 
-  public login() {
-
-      this.setUserInfo(null);
-      this.setUserWorkouts(null);
+  public createUser() {
+      this.setUserInfo({});
+      this.setUserWorkouts({});
   }
 
   public destroy() {
