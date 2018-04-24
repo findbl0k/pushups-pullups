@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Platform } from 'ionic-angular';
 
 @Component({
   selector: 'page-entry',
@@ -7,8 +7,20 @@ import { NavController } from 'ionic-angular';
 })
 export class EntryPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private platform: Platform,) {
 
+  }
+
+  testTag() {
+    this.platform.ready().then(() => {
+      window["plugins"].OneSignal.sendTag("test", 1);
+    });
+  }
+
+  buttonClick() {
+
+    this.testTag();
+    alert("test set");
   }
 
 }

@@ -5,6 +5,7 @@ import { NavController } from 'ionic-angular';
   selector: 'page-charts',
   templateUrl: 'charts.html'
 })
+
 export class ChartsPage {
 
   constructor(public navCtrl: NavController) {
