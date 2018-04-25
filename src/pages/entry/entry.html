@@ -7,32 +7,48 @@
 </ion-header>
 
 <ion-content>
-  <button *ngIf="!new" ion-button (click)="startCreating()">Add an activity</button>
+  <div *ngIf="!new">
 
-  <form *ngIf="new" (ngSubmit)="createActivity()">
-    <ion-item>
-      <ion-label>Activity name: </ion-label>
-      <ion-input type="text" [(ngModel)]="model.name" name="activityName"></ion-input>
-    </ion-item>
+    <h2>Add a new activity</h2>
+    <p>Use the button below to start tracking a new activity!</p>
+    <button *ngIf="!new" ion-button (click)="startCreating()">Add an activity</button>
 
-    <ion-item>
-      <ion-label>Enable reminder: </ion-label>
-      <ion-checkbox [(ngModel)]="model.reminder" name="enableReminder"></ion-checkbox>
-    </ion-item>
+  </div>
 
-    <ion-item *ngIf="model.reminder">
-      <ion-label>Reminder time: </ion-label>
-      <ion-datetime displayFormat="hh:mm a" [(ngModel)]="model.time" name="reminderTime"></ion-datetime>
-    </ion-item>
+  <div *ngIf="new">
 
-    <ion-item *ngIf="model.reminder">
-      <ion-label>Interval: </ion-label>
-      <ion-select [(ngModel)]="model.interval">
-        <ion-option *ngFor="let item of intervalList" [value]="item.option">{{item.description}}</ion-option>
-      </ion-select>
-    </ion-item>
+    <h2>Add a new activity</h2>
 
-    <button ion-button type="submit">Add this activity</button>
-  </form>
+    <form (ngSubmit)="createActivity()">
+      <ion-item>
+        <ion-label>Activity name: </ion-label>
+        <ion-input type="text" [(ngModel)]="model.name" name="activityName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Enable reminder: </ion-label>
+        <ion-checkbox [(ngModel)]="model.reminder" name="enableReminder"></ion-checkbox>
+      </ion-item>
+
+      <ion-item *ngIf="model.reminder">
+        <ion-label>Reminder time: </ion-label>
+        <ion-datetime displayFormat="hh:mm a" [(ngModel)]="model.time" name="reminderTime"></ion-datetime>
+      </ion-item>
+
+      <ion-item *ngIf="model.reminder">
+        <ion-label>Interval: </ion-label>
+        <ion-select [(ngModel)]="model.interval">
+          <ion-option *ngFor="let item of intervalList" [value]="item.option">{{item.description}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <br/>
+      <button ion-button type="submit">Add this activity</button>
+    </form>
+
+  </div>
+
+
+
 
 </ion-content>

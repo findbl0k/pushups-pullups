@@ -36,6 +36,9 @@ export class EntryPage {
   }
 
   createActivity() { //creates a new activity
+
+
+
     this.new = false;
 
   }
