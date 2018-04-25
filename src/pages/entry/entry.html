@@ -7,5 +7,32 @@
 </ion-header>
 
 <ion-content>
-  <button ion-button (click)="buttonClick()">Add an activity</button>
+  <button *ngIf="!new" ion-button (click)="startCreating()">Add an activity</button>
+
+  <form *ngIf="new" (ngSubmit)="createActivity()">
+    <ion-item>
+      <ion-label>Activity name: </ion-label>
+      <ion-input type="text" [(ngModel)]="model.name" name="activityName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Enable reminder: </ion-label>
+      <ion-input type="text" [(ngModel)]="model.reminder" name="enableReminder"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="model.reminder">
+      <ion-label>Reminder time: </ion-label>
+      <ion-input type="text" [(ngModel)]="model.time" name="reminderTime"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="model.reminder">
+      <ion-label>Interval: </ion-label>
+      <ion-select [(ngModel)]="model.interval">
+        <ion-option *ngFor="let item of intervalList" [value]="item.option">{{item.description}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <button ion-button type="submit">Add this activity</button>
+  </form>
+
 </ion-content>

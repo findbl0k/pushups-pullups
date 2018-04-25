@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from "@angular/http";
+import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 
 import 'rxjs/add/operator/finally';
@@ -12,7 +12,7 @@ export class DataService {
 
   public dataService = new BehaviorSubject(null);
 
-  constructor(public http: Http) {
+  constructor(public http: HttpClient) {
     this.userInfo = this.getStorageVariable('user_info');
     this.userWorkouts = this.getStorageVariable('user_workouts');
     this.dataService.next(this.userWorkouts); //set the observable from stored data

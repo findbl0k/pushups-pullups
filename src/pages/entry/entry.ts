@@ -4,14 +4,22 @@ import { DataService } from '../../services/dataService';
 
 @Component({
   selector: 'page-entry',
-  templateUrl: 'entry.html'
+  templateUrl: 'entry.html',
 })
 export class EntryPage {
 
   dataService;
+  new: any = false;
+  intervalList: any = null;
 
-  constructor(public navCtrl: NavController, private platform: Platform,) {
+  model: any = {name: null, reminder: false, time: null, interval: null};
 
+  constructor(public navCtrl: NavController, private platform: Platform, public data: DataService) {
+
+  }
+
+  ionViewWillEnter() {
+    //this.dataService = this.data.dataService.getValue();
   }
 
   setTag(tag, value) { //tag must be string, value is num or string
@@ -20,11 +28,16 @@ export class EntryPage {
     });
   }
 
+  startCreating() {
+    this.new = true;
+  }
+
   createActivity() { //creates a new activity
+    this.new = false;
 
   }
 
-  destroyActivity() {//WARNING: PERMANENTLY DESTROYS AN ACTIVITY AND ALL DATA
+  destroyActivity() { //WARNING: PERMANENTLY DESTROYS AN ACTIVITY AND ALL DATA
 
   }
 
