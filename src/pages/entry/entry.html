@@ -17,12 +17,12 @@
 
     <ion-item>
       <ion-label>Enable reminder: </ion-label>
-      <ion-input type="text" [(ngModel)]="model.reminder" name="enableReminder"></ion-input>
+      <ion-checkbox [(ngModel)]="model.reminder" name="enableReminder"></ion-checkbox>
     </ion-item>
 
     <ion-item *ngIf="model.reminder">
       <ion-label>Reminder time: </ion-label>
-      <ion-input type="text" [(ngModel)]="model.time" name="reminderTime"></ion-input>
+      <ion-datetime displayFormat="hh:mm a" [(ngModel)]="model.time" name="reminderTime"></ion-datetime>
     </ion-item>
 
     <ion-item *ngIf="model.reminder">

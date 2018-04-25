@@ -10,7 +10,10 @@ export class EntryPage {
 
   dataService;
   new: any = false;
-  intervalList: any = null;
+  intervalList: any = [{option: 0, description: "Every day"},
+    {option: 1, description: "Every other day"},
+    {option: 2, description: "Every third day"}
+  ];
 
   model: any = {name: null, reminder: false, time: null, interval: null};
 
