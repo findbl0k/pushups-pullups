@@ -8,8 +8,11 @@ import { DataService } from '../../services/dataService';
 })
 export class EntryPage {
 
-  dataService;
+  workoutData;
+  userData;
+
   new: any = false;
+
   intervalList: any = [{option: 0, description: "Every day"},
     {option: 1, description: "Every other day"},
     {option: 2, description: "Every third day"}
@@ -22,7 +25,8 @@ export class EntryPage {
   }
 
   ionViewWillEnter() {
-    //this.dataService = this.data.dataService.getValue();
+    this.workoutData = this.data.workoutData.getValue();
+    this.userData = this.data.userData.getValue();
   }
 
   setTag(tag, value) { //tag must be string, value is num or string
@@ -36,11 +40,7 @@ export class EntryPage {
   }
 
   createActivity() { //creates a new activity
-
-
-
     this.new = false;
-
   }
 
   destroyActivity() { //WARNING: PERMANENTLY DESTROYS AN ACTIVITY AND ALL DATA
@@ -48,13 +48,10 @@ export class EntryPage {
   }
 
   updateToday() { //updates local storage and observable with user values
-
-
     this.updateTags();
   }
 
   updateTags() { //runs checks and updates onesignal data tags
-
     this.setTag("test", 1);
     alert("test tag set");
   }

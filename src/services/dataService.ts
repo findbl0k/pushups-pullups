@@ -10,12 +10,15 @@ export class DataService {
   userInfo: any;
   userWorkouts: any;
 
-  public dataService = new BehaviorSubject(null);
+  public workoutData = new BehaviorSubject(null);
+  public userData = new BehaviorSubject(null);
 
   constructor(public http: HttpClient) {
     this.userInfo = this.getStorageVariable('user_info');
     this.userWorkouts = this.getStorageVariable('user_workouts');
-    this.dataService.next(this.userWorkouts); //set the observable from stored data
+
+    this.workoutData.next(this.userWorkouts); //set the observables from stored data
+    this.userData.next(this.userInfo);
   }
 
   private getStorageVariable(name) {
@@ -45,7 +48,8 @@ export class DataService {
     window.localStorage.removeItem('user_workouts');
 
     //delete observable data
-    this.dataService.next(null);
+    this.workoutData.next(null);
+    this.userData.next(null);
 
     this.userInfo = null;
     this.userWorkouts = null;
