@@ -54,6 +54,24 @@
 
   </ion-card>
 
+  <ion-card *ngIf="data.workoutData.getValue()?.length > 0">
+    <ion-card-content>
+      <h1>Your Activities</h1>
+      <ion-grid>
+        <ion-row wrap>
+          <ion-col col-6 *ngFor="let activity of data.workoutData.getValue(); let i=index">
+
+            <ion-card (click)="openModal(i)">
+              <div class="card-title">{{Activity.name}}</div>
+            </ion-card>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card-content>
+  </ion-card>
+
 
 
 

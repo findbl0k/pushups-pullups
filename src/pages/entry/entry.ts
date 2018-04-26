@@ -49,12 +49,12 @@ export class EntryPage {
     if(this.workoutData===null){
       this.data.createUser(); //sets user data to empty object and user workouts to an empty array
 
-      this.workoutData = this.data.workoutData.getValue(); //update observables after user creation
+      this.workoutData = this.data.workoutData.getValue(); //update local data after user creation
       this.userData = this.data.userData.getValue();
     }
 
     this.workoutData.push(newActivity); //add new activity to workout array
-    this.data.setUserWorkouts(this.workoutData); //update
+    this.data.setUserWorkouts(this.workoutData); //update workout data with new activity
 
     this.new = false;
   }
