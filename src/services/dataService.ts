@@ -29,17 +29,19 @@ export class DataService {
     window.localStorage.setItem(name, JSON.stringify(data));
   }
 
-  private setUserInfo(payload) {
-    this.setStorageVariable('user_info', payload);
+  public setUserInfo(payload) {
+    this.setStorageVariable('user_info', payload); //set local storage
+    this.userData.next(payload); //update observable
   }
 
-  private setUserWorkouts(payload) {
-    this.setStorageVariable('user_workouts', payload);
+  public setUserWorkouts(payload) {
+    this.setStorageVariable('user_workouts', payload);  //set local storage
+    this.workoutData.next(payload); //update observable
   }
 
-  public createUser() {
+  public createUser() { //initializes localstorage and updates observables with blank object/array
       this.setUserInfo({});
-      this.setUserWorkouts({});
+      this.setUserWorkouts([]);
   }
 
   public destroy() {

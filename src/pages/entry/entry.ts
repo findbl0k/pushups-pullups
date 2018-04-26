@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
 import { DataService } from '../../services/dataService';
 
+import { Activity } from './../../activity';
+
 @Component({
   selector: 'page-entry',
   templateUrl: 'entry.html',
@@ -40,6 +42,20 @@ export class EntryPage {
   }
 
   createActivity() { //creates a new activity
+
+    alert('creating activity')
+
+    let newActivity = new Activity(this.model.name, this.model.reminder, new Date(), []);
+    if(this.workoutData===null){
+      this.data.createUser(); //sets user data to empty object and user workouts to an empty array
+
+      this.workoutData = this.data.workoutData.getValue(); //update observables after user creation
+      this.userData = this.data.userData.getValue();
+    }
+
+    this.workoutData.push(newActivity); //add new activity to workout array
+    this.data.setUserWorkouts(this.workoutData); //update
+
     this.new = false;
   }
 

@@ -13,7 +13,7 @@
 
   <ion-card *ngIf="!new">
     <ion-card-content>
-      
+
     <p>Use the button below to start tracking a new activity!</p>
     <button *ngIf="!new" ion-button (click)="startCreating()">Add an activity</button>
 
@@ -22,8 +22,6 @@
 
   <ion-card *ngIf="new">
     <ion-card-content>
-
-      <h2>Add a new activity</h2>
 
       <form (ngSubmit)="createActivity()">
         <ion-item>
