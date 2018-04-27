@@ -27,6 +27,8 @@ export class EntryPage {
   }
 
   ionViewWillEnter() {
+    this.data.login();
+
     this.workoutData = this.data.workoutData.getValue();
     this.userData = this.data.userData.getValue();
   }

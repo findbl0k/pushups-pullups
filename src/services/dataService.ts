@@ -14,11 +14,12 @@ export class DataService {
   public userData = new BehaviorSubject(null);
 
   constructor(public http: HttpClient) {
-    this.userInfo = this.getStorageVariable('user_info');
-    this.userWorkouts = this.getStorageVariable('user_workouts');
 
-    this.workoutData.next(this.userWorkouts); //set the observables from stored data
-    this.userData.next(this.userInfo);
+  }
+
+  public login(){  //set the observables from stored data
+    this.workoutData.next(this.getStorageVariable('user_workouts'));
+    this.userData.next(this.getStorageVariable('user_info'));
   }
 
   private getStorageVariable(name) {
