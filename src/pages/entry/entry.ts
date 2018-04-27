@@ -31,6 +31,8 @@ export class EntryPage {
 
     this.workoutData = this.data.workoutData.getValue();
     this.userData = this.data.userData.getValue();
+
+    alert(JSON.stringify(this.workoutData));
   }
 
   setTag(tag, value) { //tag must be string, value is num or string
