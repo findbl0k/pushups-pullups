@@ -6,6 +6,7 @@ export class Activity {
   constructor(
     public name: string,
     public reminder: boolean,
+    public reminderTime: any,
     public createDate: any,
     public workouts: any,
   ) {  }

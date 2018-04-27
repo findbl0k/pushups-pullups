@@ -20,7 +20,7 @@ export class EntryPage {
     {option: 2, description: "Every third day"}
   ];
 
-  model: any = {name: null, reminder: false, time: null, interval: null};
+  model: any = {name: null, reminder: false, remindTime: null, interval: null};
 
   constructor(public navCtrl: NavController, private platform: Platform, public data: DataService) {
 
@@ -49,7 +49,7 @@ export class EntryPage {
 
     alert('creating activity')
 
-    let newActivity = new Activity(this.model.name, this.model.reminder, new Date(), []);
+    let newActivity = new Activity(this.model.name, this.model.reminder, this.model.remindTime, new Date(), []);
     if(this.workoutData===null){
       this.data.createUser(); //sets user data to empty object and user workouts to an empty array
 
