@@ -83,6 +83,31 @@ export class EntryPage {
     alert(this.reps);
     alert(this.sets);
 
+    let today = new Date();
+    const dd = today.getDate();
+    const mm = today.getMonth()+1; //January is 0!
+    const yyyy = today.getFullYear();
+
+    const todayDateTime = mm + '/' + dd + '/' + yyyy
+
+    const todaysData = [todayDateTime, this.reps, this.sets];
+
+    alert(JSON.stringify(todaysData));
+
+    const numWorkouts = this.workoutData[i].workouts.length;
+    alert(numWorkouts);
+
+    if(numWorkouts>0){
+      if(this.workoutData[i].workouts[numWorkouts-1][0]===todayDateTime){
+        //check if today is already set. Promp to update if already set. Else, store data.
+        alert('DATA ALREADY SET FOR TODAY!');
+      }
+      else this.workoutData[i].workouts.push(todaysData);
+    }
+    else this.workoutData[i].workouts.push(todaysData);
+
+    this.data.setUserWorkouts(this.workoutData); //update workout data with new activity
+
     this.updateTags();
   }
 
