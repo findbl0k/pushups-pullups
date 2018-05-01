@@ -54,16 +54,30 @@
 
   </ion-card>
 
-  <ion-card *ngIf="data.workoutData.getValue()?.length > 0">
-    <ion-card-content>
-      <h1>Your Activities</h1>
+  <div *ngIf="data.workoutData.getValue()?.length > 0">
+    <ion-card *ngFor="let activity of data.workoutData.getValue(); let i=index">
+      <ion-card-content *ngIf="!showMe[i]">
+        <h1 (click)="showActivity(i)"><ion-icon name="arrow-dropdown"></ion-icon>&nbsp;{{activity.name}}</h1>
+      </ion-card-content>
 
-            <ion-card *ngFor="let activity of data.workoutData.getValue(); let i=index">
-              <div class="card-title">{{activity.name}}</div>
-            </ion-card>
+      <ion-card-content *ngIf="showMe[i]">
+        <h1 (click)="hideActivity(i)"><ion-icon name="arrow-dropup-circle"></ion-icon>&nbsp;{{activity.name}}</h1>
+        <form (ngSubmit)="updateActivity(i)">
+          <ion-item>
+            <ion-label>Reps: </ion-label>
+            <ion-input type="text" [(ngModel)]="reps" name="reps"></ion-input>
+          </ion-item>
 
-    </ion-card-content>
-  </ion-card>
+          <ion-item>
+            <ion-label>Sets: </ion-label>
+            <ion-input type="text" [(ngModel)]="sets" name="sets"></ion-input>
+          </ion-item>
+
+          <button ion-button type="submit">Submit</button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
 
 
 

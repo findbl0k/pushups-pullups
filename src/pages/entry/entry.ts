@@ -12,6 +12,9 @@ export class EntryPage {
 
   workoutData;
   userData;
+  reps: number;
+  sets: number;
+  showMe: any;
 
   new: any = false;
 
@@ -23,7 +26,7 @@ export class EntryPage {
   model: any = {name: null, reminder: false, remindTime: null, interval: null};
 
   constructor(public navCtrl: NavController, private platform: Platform, public data: DataService) {
-
+    this.showMe = new Array(100); //max activities = 100
   }
 
   ionViewWillEnter() {
@@ -67,7 +70,19 @@ export class EntryPage {
 
   }
 
-  updateToday() { //updates local storage and observable with user values
+  showActivity(i) { //expand card for user entry
+    this.showMe[i] = 1;
+  }
+
+  hideActivity(i) { //expand card for user entry
+    this.showMe[i] = 0;
+  }
+
+  updateActivity(i) { //updates local storage and observable with user's workout values
+    alert(this.workoutData[i].name);
+    alert(this.reps);
+    alert(this.sets);
+
     this.updateTags();
   }
 
