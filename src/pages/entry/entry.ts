@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Platform } from 'ionic-angular';
+import { NavController, AlertController, Platform } from 'ionic-angular';
 import { DataService } from '../../services/dataService';
 
 import { Activity } from './../../activity';
@@ -25,7 +25,7 @@ export class EntryPage {
 
   model: any = {name: null, reminder: false, remindTime: null, interval: null};
 
-  constructor(public navCtrl: NavController, private platform: Platform, public data: DataService) {
+  constructor(public navCtrl: NavController, private platform: Platform, public data: DataService, public alertCtrl: AlertController) {
     this.showMe = new Array(100); //max activities = 100
   }
 
@@ -101,12 +101,39 @@ export class EntryPage {
       if(this.workoutData[i].workouts[numWorkouts-1][0]===todayDateTime){
         //check if today is already set. Promp to update if already set. Else, store data.
         alert('DATA ALREADY SET FOR TODAY!');
-      }
-      else this.workoutData[i].workouts.push(todaysData);
-    }
-    else this.workoutData[i].workouts.push(todaysData);
 
-    this.data.setUserWorkouts(this.workoutData); //update workout data with new activity
+        let confirm = this.alertCtrl.create({
+          title: 'Data already exists for' + this.workoutData[i].name,
+          message: 'Do you want to overwrite existing data for today?',
+          buttons: [
+            {
+              text: 'Overwrite',
+              handler: () => {
+                console.log('Overwrite clicked');
+
+                this.workoutData[i].workouts[numWorkouts-1] = todaysData;
+                this.data.setUserWorkouts(this.workoutData); //update workout data with new activity
+              }
+            },
+            {
+              text: 'Cancel',
+              handler: () => {
+                console.log('cancel clicked');
+              }
+            }
+          ]
+        });
+        confirm.present();
+      }
+      else {
+        this.workoutData[i].workouts.push(todaysData);
+        this.data.setUserWorkouts(this.workoutData); //update workout data with new activity
+      }
+    }
+    else {
+      this.workoutData[i].workouts.push(todaysData);
+      this.data.setUserWorkouts(this.workoutData); //update workout data with new activity
+    }
 
     this.updateTags();
   }
