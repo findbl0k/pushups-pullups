@@ -82,7 +82,7 @@ export class EntryPage {
     const dd = today.getDate();
     const mm = today.getMonth()+1; //January is 0!
     const yyyy = today.getFullYear();
-    const todayDateTime = mm + '/' + dd + '/' + yyyy
+    const todayDateTime = mm + '/' + dd + '/' + yyyy;
     const todaysData = [todayDateTime, this.reps, this.sets];
 
     const numWorkouts = this.workoutData[i].workouts.length;
