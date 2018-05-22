@@ -57,11 +57,13 @@
   <div *ngIf="data.workoutData.getValue()?.length > 0">
     <ion-card *ngFor="let activity of data.workoutData.getValue(); let i=index">
       <ion-card-content *ngIf="!showMe[i]">
-        <h1 (click)="showActivity(i)"><ion-icon name="arrow-dropdown"></ion-icon>&nbsp;{{activity.name}}</h1>
+        <div class="float-right"><h1 (click)="showActivity(i)"><ion-icon name="arrow-dropdown"></ion-icon>&nbsp;{{activity.name}}</h1></div>
+        <div class="clear-float"></div>
       </ion-card-content>
 
       <ion-card-content *ngIf="showMe[i]">
-        <h1 (click)="hideActivity(i)"><ion-icon name="arrow-dropup-circle"></ion-icon>&nbsp;{{activity.name}}</h1>
+        <div class="float-right"><h1 (click)="hideActivity(i)"><ion-icon name="arrow-dropup-circle"></ion-icon>&nbsp;{{activity.name}}</h1></div>
+        <div class="clear-float"></div>
         <form (ngSubmit)="updateActivity(i)">
           <ion-item>
             <ion-label>Reps: </ion-label>

@@ -88,7 +88,7 @@ export class EntryPage {
     const numWorkouts = this.workoutData[i].workouts.length;
 
     if(numWorkouts > 0){
-      if(this.workoutData[i].workouts[numWorkouts-1][0]===todayDateTime){ //check if today is already set. Promp to update if already set.
+      if(this.workoutData[i].workouts[numWorkouts-1][0]===todayDateTime){ //check if today is already set. Prompt to update if already set.
 
         let confirm = this.alertCtrl.create({
           title: 'Data already exists for' + this.workoutData[i].name,
