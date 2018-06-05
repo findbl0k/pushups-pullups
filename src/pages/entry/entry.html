@@ -8,9 +8,6 @@
 
 <ion-content class="card-background-page">
 
-
-
-
   <ion-card *ngIf="!new">
     <ion-card-content>
 
@@ -57,13 +54,12 @@
   <div *ngIf="data.workoutData.getValue()?.length > 0">
     <ion-card *ngFor="let activity of data.workoutData.getValue(); let i=index">
       <ion-card-content *ngIf="!showMe[i]">
-        <div class="float-right"><h1 (click)="showActivity(i)"><ion-icon name="arrow-dropdown"></ion-icon>&nbsp;{{activity.name}}</h1></div>
-        <div class="clear-float"></div>
+        <div float-left><h1 (click)="showActivity(i)"><ion-icon name="arrow-dropdown"></ion-icon>&nbsp;{{activity.name}}</h1></div>
       </ion-card-content>
 
       <ion-card-content *ngIf="showMe[i]">
-        <div class="float-right"><h1 (click)="hideActivity(i)"><ion-icon name="arrow-dropup-circle"></ion-icon>&nbsp;{{activity.name}}</h1></div>
-        <div class="clear-float"></div>
+        <div float-left><h1 (click)="hideActivity(i)"><ion-icon name="arrow-dropup-circle"></ion-icon>&nbsp;{{activity.name}}</h1></div>
+        <div float-right ><h1><ion-icon (click)="openModal()" name="settings"></ion-icon></h1></div>
         <form (ngSubmit)="updateActivity(i)">
           <ion-item>
             <ion-label>Reps: </ion-label>
@@ -80,10 +76,5 @@
       </ion-card-content>
     </ion-card>
   </div>
-
-  <h1 (click)="openModal()">TEST</h1>
-
-
-
 
 </ion-content>
