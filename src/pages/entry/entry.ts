@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, Platform } from 'ionic-angular';
+import { NavController, AlertController, Platform, Modal, ModalController, ViewController } from 'ionic-angular';
 import { DataService } from '../../services/dataService';
 
 import { Activity } from './../../activity';
@@ -25,7 +25,7 @@ export class EntryPage {
 
   model: any = {name: null, reminder: false, remindTime: null, interval: null};
 
-  constructor(public navCtrl: NavController, private platform: Platform, public data: DataService, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, private platform: Platform, public data: DataService, public alertCtrl: AlertController, public modalCtrl: ModalController) {
     this.showMe = new Array(100); //max activities = 100
   }
 
@@ -129,4 +129,23 @@ export class EntryPage {
   updateTags() { //runs checks and updates onesignal data tags
     this.setTag("test", 1);
   }
+
+  openModal() { //opens modal for editing past days
+
+    const myModal: Modal = this.modalCtrl.create('EntryModalPage', {});
+
+    myModal.present();
+
+    myModal.onDidDismiss((data) => {
+      console.log("I have dismissed.");
+      console.log(data);
+    });
+
+    myModal.onWillDismiss((data) => {
+      console.log("I'm about to dismiss");
+      console.log(data);
+    });
+
+  }
+
 }
