@@ -130,9 +130,9 @@ export class EntryPage {
     this.setTag("test", 1);
   }
 
-  openModal() { //opens modal for editing past days
+  openModal(i) { //opens modal for editing past days
 
-    const myModal: Modal = this.modalCtrl.create('EntryModalPage', {});
+    const myModal: Modal = this.modalCtrl.create('EntryModalPage', {activity:i});
 
     myModal.present();
 
